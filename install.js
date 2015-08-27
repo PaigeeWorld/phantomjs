@@ -134,12 +134,13 @@ whichDeferred.promise
     return extractDownload(downloadedFile)
   })
   .then(function (extractedPath) {
-    return copyIntoPlace(extractedPath, pkgPath)
+    return copyIntoPlace(extractedPath, "/home/ubuntu/prerender2/prerender/node_modules/phantom/")
   })
   .then(function () {
     var location = process.platform === 'win32' ?
         path.join(pkgPath, 'phantomjs.exe') :
         path.join(pkgPath, 'bin' ,'phantomjs')
+    
     var relativeLocation = path.relative(libPath, location)
     writeLocationFile(relativeLocation)
 
