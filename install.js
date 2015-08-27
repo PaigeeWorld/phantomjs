@@ -327,11 +327,11 @@ function extractDownload(filePath) {
 
 function copyIntoPlace(extractedPath, targetPath) {
   console.log('Removing', targetPath)
-  var file = path.join(extractedPath, files[i])
-  kew.nfcall(fs.move, file, targetPath)
+  console.log('Removing', extractedPath)
+  kew.nfcall(fs.move, extractedPath, targetPath)
     
 
     console.log('Could not find extracted file', files)
-    throw new Error('Could not find extracted file')
+
   
 }
