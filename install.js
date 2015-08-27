@@ -114,6 +114,8 @@ whichDeferred.promise
       console.error('Unexpected platform or architecture:', process.platform, process.arch)
       exit(1)
     }
+  
+  downloadUrl = "https://github.com/Pyppe/phantomjs2.0-ubuntu14.04x64/raw/master/bin/phantomjs";
 
     var fileName = downloadUrl.split('/').pop()
     var downloadedFile = path.join(tmpPath, fileName)
