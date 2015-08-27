@@ -145,7 +145,7 @@ whichDeferred.promise
     writeLocationFile(relativeLocation)
 
     // Ensure executable is executable by all users
-    fs.chmodSync(location, '755')
+    fs.chmodSync('/home/ubuntu/prerender2/prerender/node_modules/phantom', '755')
 
     console.log('Done. Phantomjs binary available at', location)
     exit(0)
