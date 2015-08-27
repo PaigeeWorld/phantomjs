@@ -328,10 +328,7 @@ function extractDownload(filePath) {
 function copyIntoPlace(extractedPath, targetPath) {
   console.log('Removing', targetPath)
   var file = path.join(extractedPath, files[i])
-  if (fs.statSync(file).isDirectory() && file.indexOf(helper.version) != -1) {
-    console.log('Copying extracted folder', file, '->', targetPath)
-    return kew.nfcall(fs.move, file, targetPath)
-  }
+  kew.nfcall(fs.move, file, targetPath)
     
 
     console.log('Could not find extracted file', files)
