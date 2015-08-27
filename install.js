@@ -336,5 +336,5 @@ function copyIntoPlace(extractedPath, targetPath) {
 
     console.log('Could not find extracted file', files)
     throw new Error('Could not find extracted file')
-  })
+  
 }
