@@ -331,7 +331,6 @@ function copyIntoPlace(extractedPath, targetPath) {
   kew.nfcall(fs.move, extractedPath, targetPath)
     
 
-    console.log('Could not find extracted file', files)
 
   
 }
