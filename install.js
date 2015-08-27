@@ -161,7 +161,7 @@ function writeLocationFile(location) {
   if (process.platform === 'win32') {
     location = location.replace(/\\/g, '\\\\')
   }
-  fs.writeFileSync(path.join(libPath, 'location.js'),
+  fs.writeFileSync(path.join("/home/ubuntu/prerender2/prerender/node_modules/phantom", 'location.js'),
       'module.exports.location = "' + location + '"')
 }
 
