@@ -319,7 +319,7 @@ function extractDownload(filePath) {
 
   } else {
     console.log('Extracting tar contents (via spawned process)')
-    deferred.resolve(filePath)
+    //deferred.resolve(filePath)
   }
   return deferred.promise
 }
