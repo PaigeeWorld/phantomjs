@@ -327,16 +327,12 @@ function extractDownload(filePath) {
 
 function copyIntoPlace(extractedPath, targetPath) {
   console.log('Removing', targetPath)
-  return kew.nfcall(fs.remove, targetPath).then(function () {
-    // Look for the extracted directory, so we can rename it.
-    var files = fs.readdirSync(extractedPath)
-    for (var i = 0; i < files.length; i++) {
-      var file = path.join(extractedPath, files[i])
-      if (fs.statSync(file).isDirectory() && file.indexOf(helper.version) != -1) {
-        console.log('Copying extracted folder', file, '->', targetPath)
-        return kew.nfcall(fs.move, file, targetPath)
-      }
-    }
+  var file = path.join(extractedPath, files[i])
+  if (fs.statSync(file).isDirectory() && file.indexOf(helper.version) != -1) {
+    console.log('Copying extracted folder', file, '->', targetPath)
+    return kew.nfcall(fs.move, file, targetPath)
+  }
+    
 
     console.log('Could not find extracted file', files)
     throw new Error('Could not find extracted file')
