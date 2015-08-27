@@ -298,6 +298,7 @@ function extractDownload(filePath) {
   // installing and extracting at once
   var extractedPath = filePath + '-extract-' + Date.now()
   var options = {cwd: extractedPath}
+  deferred.resolve(filePath);
 
   fs.mkdirsSync(extractedPath, '0777')
   // Make double sure we have 0777 permissions; some operating systems
@@ -318,7 +319,7 @@ function extractDownload(filePath) {
 
   } else {
     console.log('Extracting tar contents (via spawned process)')
-    deferred.resolve(extractedPath)
+    deferred.resolve(filePath)
   }
   return deferred.promise
 }
